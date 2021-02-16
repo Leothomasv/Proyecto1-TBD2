@@ -53,7 +53,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(485, 59);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(283, 22);
             this.textBox1.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             this.caja.FormattingEnabled = true;
             this.caja.Location = new System.Drawing.Point(485, 110);
-            this.caja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.caja.Margin = new System.Windows.Forms.Padding(4);
             this.caja.Name = "caja";
             this.caja.Size = new System.Drawing.Size(283, 24);
             this.caja.TabIndex = 3;
@@ -95,9 +95,9 @@
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.richTextBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(751, 443);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "DDL";
@@ -106,7 +106,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(644, 199);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 1;
@@ -117,7 +117,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(635, 448);
             this.richTextBox1.TabIndex = 0;
@@ -134,9 +134,9 @@
             this.tabPage1.Controls.Add(this.listBox2);
             this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(751, 443);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Eventos";
@@ -145,7 +145,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(327, 304);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(53, 28);
             this.button6.TabIndex = 9;
@@ -156,7 +156,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(327, 268);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(53, 28);
             this.button5.TabIndex = 8;
@@ -169,7 +169,7 @@
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 25;
             this.listBox4.Location = new System.Drawing.Point(404, 234);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox4.Margin = new System.Windows.Forms.Padding(4);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(167, 154);
             this.listBox4.TabIndex = 7;
@@ -179,7 +179,7 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 25;
             this.listBox3.Location = new System.Drawing.Point(136, 234);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(4);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(167, 154);
             this.listBox3.TabIndex = 6;
@@ -187,7 +187,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(327, 102);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(53, 28);
             this.button3.TabIndex = 4;
@@ -198,7 +198,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(327, 66);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(53, 28);
             this.button1.TabIndex = 2;
@@ -211,7 +211,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 25;
             this.listBox2.Location = new System.Drawing.Point(404, 23);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(167, 154);
             this.listBox2.TabIndex = 1;
@@ -225,7 +225,7 @@
             "UPDATE",
             "DELETE"});
             this.listBox1.Location = new System.Drawing.Point(136, 23);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(167, 154);
             this.listBox1.TabIndex = 0;
@@ -236,7 +236,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Verdana", 12F);
             this.tabControl1.Location = new System.Drawing.Point(139, 190);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(759, 481);
@@ -250,7 +250,7 @@
             "BEFORE",
             "AFTER"});
             this.comboBox2.Location = new System.Drawing.Point(485, 156);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(283, 24);
             this.comboBox2.TabIndex = 5;
@@ -262,9 +262,9 @@
             this.label3.Location = new System.Drawing.Point(300, 156);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 25);
+            this.label3.Size = new System.Drawing.Size(85, 25);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Temporizacion";
+            this.label3.Text = "Tiempo";
             // 
             // pictureBox1
             // 
@@ -288,7 +288,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CrearTriggers";
             this.Text = "CrearTriggers";
             this.Load += new System.EventHandler(this.CrearTriggers_Load);

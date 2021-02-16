@@ -18,22 +18,28 @@ namespace Proyecto1_TBD2.Tablas {
             arbol = _arbol;
         }
 
-        private void ModificarTabla_Load(object sender, EventArgs e) {
+        private void ModificarTabla_Load(object sender, EventArgs e)
+        {
             PantallaPrincipal pn = new PantallaPrincipal();
-            DB2Connection connection = pn.obtenerConexion(arbol.SelectedNode.Parent.Parent.Text);
-            try {
-                connection.Open();
-                DB2Command cmd = new DB2Command("SELECT NAME, COLTYPE, LENGTH, SCALE, NULLS FROM SYSIBM.SYSCOLUMNS WHERE TBNAME = '"+arbol.SelectedNode.Text+"';",connection);
-                DB2DataAdapter data = new DB2DataAdapter(cmd);
-                DataTable tabla = new DataTable();
-                data.Fill(tabla);
-                data_tablas.DataSource = tabla;
-                textBox1.Text = arbol.SelectedNode.Text;
-                nombre_Tabla = textBox1.Text;
-            } catch (DB2Exception ex) {
+            using (DB2Connection connection = pn.obtenerConexion(arbol.SelectedNode.Parent.Parent.Text))
+            {
+                try
+                {
+                    connection.Open();
+                    DB2Command cmd = new DB2Command("SELECT NAME, COLTYPE, LENGTH, SCALE, NULLS FROM SYSIBM.SYSCOLUMNS WHERE TBNAME = '" + arbol.SelectedNode.Text + "';", connection);
+                    DB2DataAdapter data = new DB2DataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    data_tablas.DataSource = tabla;
+                    textBox1.Text = arbol.SelectedNode.Text;
+                    nombre_Tabla = textBox1.Text;
+                }
+                catch (DB2Exception ex)
+                {
 
+                }
+                connection.Close();
             }
-            connection.Close();
         }
 
         private void button1_Click(object sender, EventArgs e) {

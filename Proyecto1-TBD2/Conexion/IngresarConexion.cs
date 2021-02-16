@@ -63,17 +63,17 @@ namespace Proyecto1_TBD2.Conexion {
             try {
                 connect.Open();
                 MessageBox.Show("Conexion Exitosa!\n" + "Version servidor: " + connect.ServerVersion + " Base de datos: " + connect.Database.ToString());
-                DibujarConexion(cn.Database);
-                extraerTablas(connect);
-                extraerIndicies(connect);
-                extrarProcedimientos(connect);
-                extraerFunciones(connect);
-                extraerVistas(connect);
-                extraerTriggers(connect);
-                extraerChecks(connect);
-                extraerUsuarios(connect);
-                extraerPrimaryKeys(connect);
-                extraerForeginKeys(connect);
+                CrearConexion(cn.Database);
+                obtenerTablas(connect);
+                obtenerIndices(connect);
+                obtenerProcedimientos(connect);
+                obtenerFunciones(connect);
+                obtenerVistas(connect);
+                obtenerTriggers(connect);
+                obtenerChecks(connect);
+                obtenerUsuarios(connect);
+                obtenerPrimaryKeys(connect);
+                obtenerForeginKeys(connect);
                 this.Hide();
             } catch (DB2Exception error) {
                 MessageBox.Show("A ocurrido un error!\n" + error.Message);
@@ -91,17 +91,17 @@ namespace Proyecto1_TBD2.Conexion {
             DB2Connection connect = new DB2Connection(cn.ToString());
             try {
                 connect.Open();
-                DibujarConexion(cn.Database);
-                extraerTablas(connect);
-                extraerIndicies(connect);
-                extrarProcedimientos(connect);
-                extraerFunciones(connect);
-                extraerVistas(connect);
-                extraerTriggers(connect);
-                extraerChecks(connect);
-                extraerUsuarios(connect);
-                extraerPrimaryKeys(connect);
-                extraerForeginKeys(connect);
+                CrearConexion(cn.Database);
+                obtenerTablas(connect);
+                obtenerIndices(connect);
+                obtenerProcedimientos(connect);
+                obtenerFunciones(connect);
+                obtenerVistas(connect);
+                obtenerTriggers(connect);
+                obtenerChecks(connect);
+                obtenerUsuarios(connect);
+                obtenerPrimaryKeys(connect);
+                obtenerForeginKeys(connect);
             } catch (DB2Exception error) {
                 MessageBox.Show("A ocurrido un error!\n" + error.Message);
             }
@@ -109,7 +109,7 @@ namespace Proyecto1_TBD2.Conexion {
             connect.Close();
         }
 
-        public void extraerTablas(DB2Connection connect) {
+        public void obtenerTablas(DB2Connection connect) {
             DB2Command cmd = new DB2Command("SELECT NAME FROM SYSIBM.SYSTABLES WHERE type = 'T' AND creator = '" + usuario.Text.ToUpper()+"';", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
             while (bff.Read()) {
@@ -122,7 +122,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void extraerIndicies(DB2Connection connect) {
+        public void obtenerIndices(DB2Connection connect) {
             DB2Command cmd = new DB2Command(@"select ind.indname  from syscat.indexes ind join syscat.indexcoluse cols  on ind.indname = cols.indname  and ind.indschema = 'DB2ADMIN' where ind.tabschema not like 'SYS%';" , connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
             TreeNode nodo = node2.Nodes.Add("Indices");
@@ -138,7 +138,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void extraerPrimaryKeys(DB2Connection connect) {
+        public void obtenerPrimaryKeys(DB2Connection connect) {
             DB2Command cmd = new DB2Command(@"select  const.constname from syscat.tables tab inner join syscat.tabconst const  on const.tabschema = tab.tabschema and const.tabname = tab.tabname and const.type = 'P'  join syscat.keycoluse key  on const.tabschema = key.tabschema   and const.tabname = key.tabname  and const.constname = key.constname  where tab.type = 'T'  and tab.tabschema like 'DB2ADMIN' group by tab.tabschema, const.constname, tab.tabname   order by tab.tabschema, const.constname;", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
             TreeNode nodo = node2.Nodes.Add("Llaves Primarias");
@@ -155,7 +155,7 @@ namespace Proyecto1_TBD2.Conexion {
         }
 
 
-        public void extraerForeginKeys(DB2Connection connect) {
+        public void obtenerForeginKeys(DB2Connection connect) {
             DB2Command cmd = new DB2Command(@"select  constname  from syscat.references ;", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
             TreeNode nodo = node2.Nodes.Add("Llaves Foraneas");
@@ -171,7 +171,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void extrarProcedimientos(DB2Connection connect) {
+        public void obtenerProcedimientos(DB2Connection connect) {
             DB2Command cmd = new DB2Command("SELECT procname FROM syscat.procedures WHERE procschema = '" + usuario.Text.ToUpper() + "';", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
 
@@ -185,7 +185,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void extraerFunciones(DB2Connection connect) {
+        public void obtenerFunciones(DB2Connection connect) {
 
             DB2Command cmd = new DB2Command(@"select routinename from syscat.routines where routineschema not like 'SYS%'and routineschema = 'DB2ADMIN' and text not like '%PROCEDURE%'; ", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
@@ -200,7 +200,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void extraerVistas(DB2Connection connect) {
+        public void obtenerVistas(DB2Connection connect) {
             DB2Command cmd = new DB2Command(@"select NAME from SYSIBM.SYSVIEWS WHERE CREATOR ='" + usuario.Text.ToUpper() + "';", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
 
@@ -214,7 +214,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void extraerTriggers(DB2Connection connect) {
+        public void obtenerTriggers(DB2Connection connect) {
             DB2Command cmd = new DB2Command(@"SELECT TRIGNAME FROM SYSCAT.TRIGGERS WHERE TRIGSCHEMA ='" + usuario.Text.ToUpper() + "';", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
             while (bff.Read()) {
@@ -228,7 +228,7 @@ namespace Proyecto1_TBD2.Conexion {
         }
 
      
-        public void extraerChecks(DB2Connection connect) {
+        public void obtenerChecks(DB2Connection connect) {
             DB2Command cmd = new DB2Command(@"SELECT NAME FROM SYSIBM.SYSCHECKS WHERE TBCREATOR='" + usuario.Text.ToUpper() + "';", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
             while (bff.Read()) {
@@ -241,7 +241,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void extraerUsuarios(DB2Connection connect) {
+        public void obtenerUsuarios(DB2Connection connect) {
             DB2Command cmd = new DB2Command(@"select * from sysibmadm.authorizationids WHERE AUTHIDTYPE='U';", connect);//OBTENER TABLAS DE LA BASE DE DATOS
             DB2DataReader bff = cmd.ExecuteReader();
             while (bff.Read()) {
@@ -254,7 +254,7 @@ namespace Proyecto1_TBD2.Conexion {
             bff.Close();
         }
 
-        public void DibujarConexion(string db) {
+        public void CrearConexion(string db) {
             TreeNode node0 = arbol.Nodes.Add(db);
             node0.ContextMenuStrip = subMenus [1];
 
@@ -296,7 +296,6 @@ namespace Proyecto1_TBD2.Conexion {
             node8 = node0.Nodes.Add("Usuarios");
             node8.ImageIndex = 1;
             node8.SelectedImageIndex = 1;
-           // node8.ContextMenuStrip = subMenus [15];
         }
 
         private void label6_Click(object sender, EventArgs e)

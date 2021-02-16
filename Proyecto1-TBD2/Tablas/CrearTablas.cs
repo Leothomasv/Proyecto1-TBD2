@@ -45,6 +45,7 @@ namespace Proyecto1_TBD2.Tablas {
             DB2ConnectionStringBuilder cn = new DB2ConnectionStringBuilder();
             cn.UserID = "db2admin";
             cn.Password = "leito123";
+           //string text = node.Parent.Text; //AGARRAR EL NOMBRE DE LA BASE DE DATOS PARA PODER HACER LA CONEXION
             cn.Database = node.Parent.Text;
             cn.Server = "localhost";
             DB2Connection connect = new DB2Connection(cn.ToString());

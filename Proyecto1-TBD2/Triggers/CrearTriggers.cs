@@ -101,20 +101,20 @@ namespace Proyecto1_TBD2.Triggers {
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-            string metodos = "";
-            bool hasUpdate = false;
+            string method = "";
+            bool HuboCambio = false;
             for (int i = 0; i < listBox2.Items.Count; i++) {
                 if (listBox2.Items [i].ToString() == "UPDATE") {
-                    hasUpdate = true;
+                    HuboCambio = true;
                 }
                 if (i != (listBox2.Items.Count - 1)) {
-                    metodos += listBox2.Items[i].ToString()+" OR ";
+                    method += listBox2.Items[i].ToString()+" OR ";
                 } else {
-                    metodos += listBox2.Items [i].ToString();
+                    method += listBox2.Items [i].ToString();
                 }
             }
-            if (!hasUpdate) {
-                richTextBox1.Text = "CREATE OR REPLACE  TRIGGER " + textBox1.Text + "\n" + comboBox2.SelectedItem.ToString() + " " + metodos + " ON "+caja.SelectedItem.ToString()+"\nBEGIN\n" + "\nEND";
+            if (!HuboCambio) {
+                richTextBox1.Text = "CREATE OR REPLACE  TRIGGER " + textBox1.Text + "\n" + comboBox2.SelectedItem.ToString() + " " + method + " ON "+caja.SelectedItem.ToString()+"\nBEGIN\n" + "\nEND";
             } else {
                 string parametros = "";
 
@@ -126,9 +126,9 @@ namespace Proyecto1_TBD2.Triggers {
                             parametros += listBox4.Items [i].ToString();
                         }
                     }
-                    richTextBox1.Text = "CREATE OR REPLACE  TRIGGER " + textBox1.Text + "\n" + comboBox2.SelectedItem.ToString() + " " + metodos + " OF " + parametros + " ON " + caja.SelectedItem.ToString() + "\nBEGIN\n" + "\nEND";
+                    richTextBox1.Text = "CREATE OR REPLACE  TRIGGER " + textBox1.Text + "\n" + comboBox2.SelectedItem.ToString() + " " + method + " OF " + parametros + " ON " + caja.SelectedItem.ToString() + "\nBEGIN\n" + "\nEND";
                 } else {
-                    richTextBox1.Text = "CREATE OR REPLACE  TRIGGER " + textBox1.Text + "\n" + comboBox2.SelectedItem.ToString() + " " + metodos +  " ON " + caja.SelectedItem.ToString() + "\nBEGIN\n" + "\nEND";
+                    richTextBox1.Text = "CREATE OR REPLACE  TRIGGER " + textBox1.Text + "\n" + comboBox2.SelectedItem.ToString() + " " + method +  " ON " + caja.SelectedItem.ToString() + "\nBEGIN\n" + "\nEND";
                 }
             }
             } catch  {
